@@ -50,7 +50,7 @@ class App extends Component {
   handleSubmit() {
     // console.log("find: " + this.state.stringFind);
     // console.log("replace: " + this.state.stringReplace);
-    fetch('http://localhost:9000/setFindReplace', {
+    fetch('http://35.236.53.28:9000/setFindReplace', {
       method: 'post',
       body: encodedBody({
         findString: this.state.stringFind,

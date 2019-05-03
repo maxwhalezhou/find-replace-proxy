@@ -10,7 +10,7 @@ router.get('/', function (req, res, next) {
         status: "success",
         message: 'Proxy reset.',
     })
-    exec('pkill java"', (error, stdout, stderr) => {
+    exec('pkill java', (error, stdout, stderr) => {
     });
 });
 module.exports = router;

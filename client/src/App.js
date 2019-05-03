@@ -26,7 +26,7 @@ class App extends Component {
       stringReplace: ''
     };
 
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSetProxy = this.handleSetProxy.bind(this);
   }
 
   handleStringFind = (e) => {
@@ -47,7 +47,7 @@ class App extends Component {
     replaceString: "string2"
   }
   */
-  handleSubmit() {
+  handleSetProxy() {
     // console.log("find: " + this.state.stringFind);
     // console.log("replace: " + this.state.stringReplace);
     fetch('http://35.236.53.28:9000/setFindReplace', {
@@ -68,6 +68,22 @@ class App extends Component {
     })
   }
 
+  handleResetProxy() {
+    // console.log("find: " + this.state.stringFind);
+    // console.log("replace: " + this.state.stringReplace);
+    fetch('http://35.236.53.28:9000/resetFindReplace', {
+      method: 'get',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }
+    }).then(res => res.json()).then((response) => {
+      if (response.status === 'success') {
+        alert(response.message)
+      } else {
+        alert(response.message)
+      }
+    })
+  }
   // componentWillMount() {
   //   this.callAPI();
   // }
@@ -89,8 +105,12 @@ class App extends Component {
           onChange={this.handleStringReplace}
           margin="normal"
         />
-        <Button onClick={this.handleSubmit} variant="contained">
-            Submit
+        <Button onClick={this.handleSetProxy} variant="contained">
+            Set Proxy
+        </Button>
+
+          <Button onClick={this.handleResetProxy} variant="contained">
+            Reset
         </Button>
       </div>
     );

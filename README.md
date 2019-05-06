@@ -37,6 +37,7 @@ npm install
 Below is an example on a stock iPhone Xs performing the attack. In this example, we navigate to the puiblic IP address of our server where it is hosted. We then send the response values we want to change. The proxy is then configured after our request is successful.
 
 We then see the Walmart TV price at an extremely discounted rate ($397 -> $197).
+
 An attacker can demonstrate their search to a sales rep to a competitor for a very convincing price adjustment. 
 
 ![Demo](/demo.gif?raw=true "Demo")
